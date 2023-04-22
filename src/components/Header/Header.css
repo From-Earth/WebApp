@@ -1,0 +1,23 @@
+.c-header{
+    background-color: #25232D;
+    width: 100vw;
+    height: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-header__button{
+    border: none;
+    background: none;
+    color: #fff;
+    box: 4;
+    cursor: pointer;
+
+}
+@media (min-width:670px){
+    .c-header__items{    
+        margin-right: 50px;
+    }
+}
