@@ -22,6 +22,8 @@ export default function PageRoutes(){
                 <Route element={<NotFound/>} path="*"/>
                 <Route element={<Home/>} path="/"/>
                 <Route element={<Login/>} path="/login"/>
+                <Route element={<Login/>} path="/cadastro"/>
+
             </Route>
         </Routes>
         </BrowserRouter>
