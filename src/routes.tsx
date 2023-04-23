@@ -5,6 +5,7 @@ import App from "./App";
 import path from "path";
 import Home from "./pages/home/Home";
 import NotFound from "./pages/notFound/NotFound";
+import Cadastro from "./components/Cadastro/Cadastro"
 
 export default function PageRoutes(){
 
@@ -22,8 +23,7 @@ export default function PageRoutes(){
                 <Route element={<NotFound/>} path="*"/>
                 <Route element={<Home/>} path="/"/>
                 <Route element={<Login/>} path="/login"/>
-                <Route element={<Login/>} path="/cadastro"/>
-
+                <Route element={<Cadastro/>} path="/cadastro"/>
             </Route>
         </Routes>
         </BrowserRouter>
