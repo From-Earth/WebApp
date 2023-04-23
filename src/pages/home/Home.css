@@ -1,0 +1,13 @@
+.c-home {
+  padding: 20px;
+}
+.c-home__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.c-home__list > * {
+  margin: 5px;
+}

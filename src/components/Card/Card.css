@@ -1,0 +1,33 @@
+.c-card{
+    display: flex;
+    width: 200px;
+    border: 1px solid;
+    padding: 10px;
+    background-color: #25232D;
+    color: #fff;
+    border-radius: 8px;
+}
+.c-card__image{
+    max-height: 100px;
+    padding-right: 10px
+}
+.c-card__text{
+    margin-top: 0;
+    width: 150px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical; 
+    font-size: 10px;
+    
+}
+.c-card__progress{
+    border: 1px solid;
+    padding: 2px;
+    border-radius: 5px;
+    width: 45px;
+    text-align: center;
+    font-size: 14px;
+}
