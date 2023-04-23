@@ -22,7 +22,7 @@ export default function Home() {
         )}
         {documentos.length > 0 && (
           <>
-            {documentos.map((item) => {
+            {documentos.map((item:Documento) => {
                 return(
                     <Card author={item.usuario.nome} name={item.nome} progress={item.progresso}/>
                 );

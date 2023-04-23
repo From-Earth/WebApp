@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./Card.css"
-export default function Card({name, progress, author}) {
+
+export default function Card({name, progress, author}: CardProps) {
   return (
     <div className="c-card">
       <img src="https://picsum.photos/245/600"  className="c-card__image"/>
@@ -16,3 +18,9 @@ export default function Card({name, progress, author}) {
     </div>
   );
 }
+Card.propTypes = {
+    name: PropTypes.string.isRequired,
+    progress: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
+  };
+ 
