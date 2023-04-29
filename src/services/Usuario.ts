@@ -2,7 +2,7 @@ import axios from "axios";
 import { UsuarioLogin } from "../model/UsuarioLogin";
 
 export const api = axios.create({
-  baseURL: "https://webapisenac.azurewebsites.net/usuario",
+  baseURL: "http://localhost:8080/usuario",
 });
 
 export function postLogin(data: UsuarioLogin) {
