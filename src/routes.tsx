@@ -6,6 +6,8 @@ import path from "path";
 import Home from "./pages/home/Home";
 import NotFound from "./pages/notFound/NotFound";
 import Cadastro from "./components/Cadastro/Cadastro"
+import Painel from "./pages/painel/Painel";
+import UserEdit from "./components/User/UserEdit/UserEdit";
 
 export default function PageRoutes(){
 
@@ -24,6 +26,8 @@ export default function PageRoutes(){
                 <Route element={<Home/>} path="/"/>
                 <Route element={<Login/>} path="/login"/>
                 <Route element={<Cadastro/>} path="/cadastro"/>
+                <Route element={<Painel/>} path="/painel"/>
+                <Route element={<UserEdit/>} path="/painel/edit/:id"/>
             </Route>
         </Routes>
         </BrowserRouter>

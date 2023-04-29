@@ -8,5 +8,5 @@ class Usuario{
    logradouro: string;
    numeroLogradouro: string;
    complemento	: string;
-   documento: Documento;
+   documento: Documento[];
 }

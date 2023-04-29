@@ -6,7 +6,7 @@ export const api = axios.create({
 });
 
 export function getDocumentos() {
-  return api.get("/documentos").then((resp) => resp.data);
+  return api.get("/documentos").then((resp):Documento[] => resp.data);
 }
 
 export function getDocumento(id: number, nome: string): Promise<void> {

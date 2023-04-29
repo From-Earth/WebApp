@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import "./Card.css"
 import { getDocumento } from "../../services/Documentos";
+import spinner from "../../assets/images/spinner.gif"
 
 export default function Card({id,name, progress, author}: CardProps) {
+  const [load,setLoad] = useState(false);
     function downloadDoc(){
-        getDocumento(id, name);
+        setLoad(true);
+        getDocumento(id, name).finally(() => setLoad(false));
     }
   return (
     <div className="c-card">
@@ -16,9 +19,15 @@ export default function Card({id,name, progress, author}: CardProps) {
             <br/>
           {name}<br/> {author}
         </p>
-
         <div className="c-card__progress">{progress}%</div>
       </div>
+      {load &&(
+
+<div className="c-card_load">
+  <img src={spinner} width="35px"/> 
+
+</div>
+      )}
     </div>
   );
 }
