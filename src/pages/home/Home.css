@@ -1,14 +1,14 @@
-.c-home {
-  padding: 20px;
-  background-color: #fff;
-}
-.c-home__list {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
+html {
+    background: radial-gradient(farthest-corner at right top,#06182D, #3a3a41);
+    height: 100%;
+    font-family: 'Roboto', cursive;
 }
 
-.c-home__list > * {
-  margin: 5px;
+.home {
+  color: #FFFFFF;
+  text-align: center;
+}
+
+@media screen and (min-width:320px) and (max-width: 1024px) {
+  
 }
