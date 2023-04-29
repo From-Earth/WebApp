@@ -1,11 +1,11 @@
-import { BrowserRouter , Routes, Route, Outlet} from "react-router-dom";
+import { BrowserRouter , Routes, Route, Outlet, Navigate} from "react-router-dom";
 import { Login } from "./components/Login/Login";
+import { Cadastro } from "./components/Cadastro/Cadastro";
+import Home from "./pages/home/Home";
 import Header from "./components/Header/Header";
 import App from "./App";
 import path from "path";
-import Home from "./pages/home/Home";
 import NotFound from "./pages/notFound/NotFound";
-import Cadastro from "./components/Cadastro/Cadastro"
 import Painel from "./pages/painel/Painel";
 import UserEdit from "./components/User/UserEdit/UserEdit";
 
@@ -23,7 +23,8 @@ export default function PageRoutes(){
            
             <Route element={<DefaultPages/>}>
                 <Route element={<NotFound/>} path="*"/>
-                <Route element={<Home/>} path="/"/>
+                <Route element={<Navigate to = "/home" replace/>} path="/"/>
+                <Route element={<Home/>} path="/home"/>
                 <Route element={<Login/>} path="/login"/>
                 <Route element={<Cadastro/>} path="/cadastro"/>
                 <Route element={<Painel/>} path="/painel"/>
