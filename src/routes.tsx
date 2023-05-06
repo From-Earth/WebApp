@@ -17,6 +17,13 @@ export default function PageRoutes(){
           <Outlet />
         </div>
       );
+
+      const UserLogged = () => (
+        <div>
+          <Header></Header>
+          <Outlet />
+        </div>
+      );
     return (
         <BrowserRouter>
         <Routes>
