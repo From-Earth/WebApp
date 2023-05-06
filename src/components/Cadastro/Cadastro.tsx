@@ -3,6 +3,9 @@ import './Cadastro.css';
 
 import spinner from "../../assets/images/spinner.gif"
 import { useState } from 'react';
+import { UsuarioCadastro } from '../../model/UsuarioCadastro';
+import { postCadastro } from '../../services/Usuario';
+import { redirect, useNavigate } from 'react-router-dom';
 
 
 export function Cadastro () { 
@@ -17,8 +20,14 @@ export function Cadastro () {
     const [complemento, setComplemento] = useState("");
     const [data, setData] = useState([])
     
+    const navigate = useNavigate ();
+    
     function cadastrar () {
 
+        const user = new  UsuarioCadastro(nome,cpf,email,senha,telefone,logradouro,numero,complemento);
+        console.log(user);
+        setLoad(true)
+        postCadastro(user).then(() => {alert("Cadastro realizado com sucesso!"); navigate("/login")}).finally(() => setLoad(false))
     }
     return (
         <section className='principal'>
