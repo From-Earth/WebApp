@@ -8,6 +8,7 @@ import path from "path";
 import NotFound from "./pages/notFound/NotFound";
 import Painel from "./pages/painel/Painel";
 import UserEdit from "./components/User/UserEdit/UserEdit";
+import { Delete } from "./components/Delete/Delete";
 
 export default function PageRoutes(){
 
@@ -36,6 +37,7 @@ export default function PageRoutes(){
                 <Route element={<Cadastro/>} path="/cadastro"/>
                 <Route element={<Painel/>} path="/painel"/>
                 <Route element={<UserEdit/>} path="/painel/edit/:id"/>
+                <Route element={<Delete/>} path="/painel/delete/:id"/>
             </Route>
         </Routes>
         </BrowserRouter>
