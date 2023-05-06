@@ -4,7 +4,9 @@ import { UsuarioCadastro } from "../model/UsuarioCadastro";
 import { Usuario } from "../model/Usuario";
 
 export const api = axios.create({
+
   baseURL: "https://webapisenac.azurewebsites.net/usuario",
+
 });
 
 export function postLogin(data: UsuarioLogin) {
