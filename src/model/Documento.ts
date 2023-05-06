@@ -1,4 +1,4 @@
-class Documento{
+export class Documento{
     id: number;
 arquivo: any;
 nome: string;

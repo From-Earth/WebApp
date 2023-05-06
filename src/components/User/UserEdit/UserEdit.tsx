@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import "./UserEdit.css";
 
 import spinner from "../../../assets/images/spinner.gif";
-import { getUser } from "../../../services/Usuario";
+import { getUser, putUser } from "../../../services/Usuario";
 import { useParams } from "react-router-dom";
+import { Usuario } from "../../../model/Usuario";
 
 export default function UserEdit() {
   const [nome, setNome] = useState("");
@@ -16,18 +17,41 @@ export default function UserEdit() {
   const [complemento, setComplemento] = useState("");
   const [load, setLoad] = useState(false);
   const [data, setData] = useState<Usuario | null>(null);
-  let {id} = useParams();
+  let { id } = useParams();
 
   useEffect(() => {
-    setLoad(true);
-    getUser(id)
-      .then((resp) => setData(resp))
-      .catch(() => alert("Usuario não encontrado")).finally(() => setLoad(false));
-
-    
+    getUserById();
   }, []);
 
-  function editar() {}
+  function getUserById() {
+    setLoad(true);
+    if (id) {
+      getUser(id)
+        .then((resp) => setData(resp))
+        .catch(() => alert("Usuario não encontrado"))
+        .finally(() => setLoad(false));
+    }
+  }
+
+  function handleChange(field: string, value: string) {
+    if (data) {
+      const newUser = { ...data, [field]: value };
+      setData(newUser);
+    }
+  }
+
+  function editar() {
+    setLoad(true);
+    console.log(data)
+    if (data) {
+      putUser(data)
+        .then(() => {
+          alert("Dados atualizados com sucesso!");
+          getUserById();
+        })
+        .finally(() => setLoad(false));
+    }
+  }
   return (
     <section className="edit">
       {data && (
@@ -36,14 +60,14 @@ export default function UserEdit() {
 
           <label>Nome</label>
           <input
-            type="nome"
+            type="text"
             name="nome"
             placeholder="Digite o seu nome"
             autoComplete="off"
             required
             value={data.nome}
             defaultValue={nome}
-            onChange={(e) => setNome(e.target.value)}
+            onChange={(e) => handleChange("nome", e.target.value)}
           ></input>
           <label>Email</label>
           <input
@@ -54,29 +78,29 @@ export default function UserEdit() {
             required
             value={data.email}
             defaultValue={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => handleChange("email", e.target.value)}
           ></input>
           <label>Telefone</label>
           <input
-            type="telefone"
+            type="text"
             name="telefone"
             placeholder="Digite o seu telefone"
             autoComplete="off"
             required
             value={data.telefone}
             defaultValue={telefone}
-            onChange={(e) => setTelefone(e.target.value)}
+            onChange={(e) => handleChange("telefone", e.target.value)}
           ></input>
           <label>Senha</label>
           <input
-            type="senha"
+            type="password"
             name="senha"
             placeholder="Digite o seu senha"
             autoComplete="off"
             required
             value={data.senha}
             defaultValue={senha}
-            onChange={(e) => setSenha(e.target.value)}
+            onChange={(e) => handleChange("senha", e.target.value)}
           ></input>
 
           <button className="btn" type="submit" onClick={editar}>
