@@ -1,0 +1,11 @@
+.c-home{
+    background-color: #fff;
+}
+
+.c-home__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getDocumentos } from "../../services/Documentos";
 import Card from "../../components/Card/Card";
+import "./Painel.css"
+import { Documento } from "../../model/Documento";
 
 export default function Painel(){
-    const [documentos, setDocumentos] = useState([]);
+    const [documentos, setDocumentos] = useState<Documento[]>([]);
     const [load, setLoad] = useState(true)
     useEffect(() => {
       if (documentos.length == 0) {

@@ -2,33 +2,18 @@ import { Documento } from "./Documento";
 
 export class UsuarioCadastro {
   nome: string;
-  cpf: string;
-  email: string;
-  senha: string;
-  telefone: string;
-  logradouro: string;
-  numeroLogradouro: string;
-  complemento: string;
-  documento: Documento;
+   email: string;
+  senha: string; 
 
   constructor(
     nome: string,
-    cpf: string,
     email: string,
     senha: string,
-    telefone: string,
-    logradouro: string,
-    numeroLogradouro: string,
-    complemento: string
   ) {
-    this.nome = nome;
-    this.cpf = cpf;
+    this.nome = nome;    
     this.email = email;
     this.senha = senha;
-    this.telefone = telefone;
-    this.logradouro = logradouro;
-    this.numeroLogradouro = numeroLogradouro;
-    this.complemento = complemento;
+    
     
   }
 }
