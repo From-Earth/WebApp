@@ -17,7 +17,7 @@ export default function Card({id,name, progress, author}: CardProps) {
         <p className="c-card__text">
             Lorem ipsum dolor sit amet pariatur dolores facilis culpa modi minus 
             <br/>
-          {name}<br/> {author}
+          {name}<br/> <span className="c-card__author">{author}</span>
         </p>
         <div className="c-card__progress">{progress}%</div>
       </div>

@@ -35,3 +35,7 @@
 .c-card_load{
     position: absolute;
 }
+
+.c-card__author{
+    text-decoration: underline;
+}

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { postLogin } from '../../services/Usuario';
 import { UsuarioLogin } from '../../model/UsuarioLogin';
 import spinner from "../../assets/images/spinner.gif"
+import { useUserStore } from '../../services/UserStore';
 
 export function Login (){
     const [load, setLoad] = useState(false);
@@ -11,11 +12,21 @@ export function Login (){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");    
     function login(){
-
+       // const useStore = useUserStore()
         const user = new UsuarioLogin(email, password);
+       // const setUser = useUserStore.getState().set;
         setLoad(true);
-        postLogin(user).then(() => navigate("/painel")).catch(() => alert("Dados incorretos")).finally(() => {setLoad(false); })
+        postLogin(user).then((resp) => {
+/*
+             useStore.email = resp.email;
+             useStore.nome = resp.nome;
+             useStore.token = resp.token
+            */
+            //setUser({ email: resp.email, token: resp.token, nome: resp.nome });
+           navigate("/painel")
+        }).catch(() => alert("Dados incorretos")).finally(() => {setLoad(false); })
     }
+
     return (
         <>
         <section className="login">

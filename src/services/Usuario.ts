@@ -10,7 +10,7 @@ export const api = axios.create({
 });
 
 export function postLogin(data: UsuarioLogin) {
-  return api.post("/logar",data).then((resp) => resp.data);
+  return api.post("/logar",data).then((resp):UsuarioLogin => resp.data);
 }
 
 export function getUser(id: string) {
@@ -25,3 +25,6 @@ export function putUser(data: Usuario) {
   return api.put("/atualizar",data).then((resp) => resp.data);
 }
 
+export function deleteUser(id: string) {
+  return api.delete(`/${id}`).then((resp) => resp.data);
+}

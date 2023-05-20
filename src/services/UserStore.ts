@@ -1,8 +1,8 @@
-import create from 'zustand';
+import {create} from 'zustand';
 
 interface User {
-    email: string
-    token: string
+    email: string,
+    token: string,
     nome: string
 
 }
