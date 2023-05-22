@@ -27,7 +27,8 @@ export default function UserEdit() {
     setLoad(true);
     if (id) {
       getUser(id)
-        .then((resp) => setData(resp))
+        .then((resp) => {
+          alert("passou");setData(resp)})
         .catch(() => alert("Usuario não encontrado"))
         .finally(() => setLoad(false));
     }

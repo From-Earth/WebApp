@@ -9,7 +9,9 @@ type UserLogged = {
     setUser: (novoId: number,
         novoEmail: string,
         novoToken: string,
-        novoNome: string,) =>void
+        novoNome: string,) =>void;
+    
+    clean: () => void
 
 }
 export const useUserStore = create<UserLogged>(set =>({
@@ -27,6 +29,14 @@ export const useUserStore = create<UserLogged>(set =>({
         novoEmail === '' && novoToken === '' && novoNome === ''
           ? true
           : false
+    })),
+    
+    clean: () => set(() =>({
+        id: NaN,
+        email : '',
+        token: '',
+        nome: '',
+        isEmpty: true,
     }))
 }));
 

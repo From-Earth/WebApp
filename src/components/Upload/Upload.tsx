@@ -33,8 +33,10 @@ export function Upload () {
 
         setLoad(true)
       postDocumento("2", arquivo).then(() => {
+
         setArquivo(null)
         document.querySelector('input[type=file]')!.value = ''; 
+        alert("Livro enviado com sucesso!")
       }).finally(() => setLoad(false))
 
         

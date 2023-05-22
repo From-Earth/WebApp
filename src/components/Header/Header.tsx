@@ -25,7 +25,8 @@ export default function Header(){
 
                 ): (
                     <>
-                    <button className="c-header__button"  onClick={() => navigate("/usuario")}><span>PERFIL</span></button>
+                    <button className="c-header__button"  onClick={() => navigate("/painel")}><span>PAINEL</span></button>
+                    <button className="c-header__button"  onClick={() => navigate("/painel/usuario")}><span>PERFIL</span></button>
                     
                     </>
                 )}

@@ -11,6 +11,7 @@ import UserEdit from "./components/User/UserEdit/UserEdit";
 import { Delete } from "./components/Delete/Delete";
 import { Upload } from "./components/Upload/Upload";
 import { useUserStore } from "./services/UserStore";
+import UserPerfil from "./components/User/UserPerfil/UserPerfil";
 
 export default function PageRoutes(){
 
@@ -50,9 +51,10 @@ export default function PageRoutes(){
             <Route element={<ProtectedRoute><UserLogged/></ProtectedRoute> }>
 
                 <Route element={<Painel/>} path="/painel"/>
+                <Route element={<Upload/>} path="/painel/livro"/>
                 <Route element={<UserEdit/>} path="/painel/edit/:id"/>
                 <Route element={<Delete/>} path="/painel/excluir/:id"/>
-                <Route element={<Upload/>} path="/painel/livro"/>
+                <Route element={<UserPerfil/>} path="/painel/usuario"/>
             </Route>
         </Routes>
         </BrowserRouter>

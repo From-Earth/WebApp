@@ -3,18 +3,21 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Delete.css";
 import spinner from "../../assets/images/spinner.gif";
 import { deleteUser } from "../../services/Usuario";
+import { useUserStore } from "../../services/UserStore";
 
 export function Delete() {
   const [load, setLoad] = useState(false);
   let { id } = useParams();
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
+  const user = useUserStore(state => state);
   function excluir() {
     if (id) {
       setLoad(true);
       deleteUser(id)
         .then(() => {
-          alert("Conta excluida com sucesso!");
           navigate("/home");
+          alert("Conta excluida com sucesso!");
+          user.clean();
         })
         .catch(() => {
           alert("Erro interno. Tente novamente mais tarde!");

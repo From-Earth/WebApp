@@ -5,6 +5,7 @@ import "./Painel.css";
 import { Documento } from "../../model/Documento";
 import { Button } from "../../components/Styled/Buttons";
 import { useNavigate } from "react-router-dom";
+import spinner from "../../assets/images/spinner.gif"
 
 export default function Painel() {
   const [documentos, setDocumentos] = useState<Documento[]>([]);
@@ -25,7 +26,7 @@ export default function Painel() {
         <Button onClick={() => navigate("livro")}>Adicionar Livro</Button>
       </div>
       <div className="c-home__list">
-        {load && <p>Carregando...</p>}
+        {load && <img src={spinner}  width="30px"/>}
         {documentos.length > 0 && (
           <>
             {documentos.map((item: Documento) => {

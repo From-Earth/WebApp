@@ -1,8 +1,3 @@
-html {
-    background: radial-gradient(farthest-corner at right top,#06182D, #3a3a41);
-    height: 100%;
-    font-family: 'Roboto', cursive;
-}
 
 .login {
     display: flex;
