@@ -9,8 +9,19 @@ import NotFound from "./pages/notFound/NotFound";
 import Painel from "./pages/painel/Painel";
 import UserEdit from "./components/User/UserEdit/UserEdit";
 import { Delete } from "./components/Delete/Delete";
+import { Upload } from "./components/Upload/Upload";
+import { useUserStore } from "./services/UserStore";
 
 export default function PageRoutes(){
+
+  const ProtectedRoute = ({ children }) => {
+    const user = useUserStore(state => state);
+    if (user.isEmpty) {
+      alert("Acesso expirado!")
+      return <Navigate to="/login" />;
+    }
+    return children;
+  };
 
     const DefaultPages = () => (
         <div>
@@ -35,9 +46,13 @@ export default function PageRoutes(){
                 <Route element={<Home/>} path="/home"/>
                 <Route element={<Login/>} path="/login"/>
                 <Route element={<Cadastro/>} path="/cadastro"/>
+            </Route>
+            <Route element={<ProtectedRoute><UserLogged/></ProtectedRoute> }>
+
                 <Route element={<Painel/>} path="/painel"/>
                 <Route element={<UserEdit/>} path="/painel/edit/:id"/>
                 <Route element={<Delete/>} path="/painel/excluir/:id"/>
+                <Route element={<Upload/>} path="/painel/livro"/>
             </Route>
         </Routes>
         </BrowserRouter>

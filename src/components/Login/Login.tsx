@@ -10,19 +10,13 @@ export function Login (){
     const [load, setLoad] = useState(false);
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");    
+    const [password, setPassword] = useState(""); 
+    const setUser = useUserStore((state) => state.setUser);
     function login(){
-       // const useStore = useUserStore()
         const user = new UsuarioLogin(email, password);
-       // const setUser = useUserStore.getState().set;
         setLoad(true);
         postLogin(user).then((resp) => {
-/*
-             useStore.email = resp.email;
-             useStore.nome = resp.nome;
-             useStore.token = resp.token
-            */
-            //setUser({ email: resp.email, token: resp.token, nome: resp.nome });
+            setUser(resp.id, resp.email,resp.token,resp.nome);
            navigate("/painel")
         }).catch(() => alert("Dados incorretos")).finally(() => {setLoad(false); })
     }

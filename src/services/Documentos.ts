@@ -1,18 +1,31 @@
 import axios from "axios";
 import { FilseSaver, saveAs } from "file-saver";
+import { Documento } from "../model/Documento";
 
-export const api = axios.create({
-  baseURL: "https://webapisenac.azurewebsites.net",
+ const api = axios.create({
+  baseURL: "https://webapisenac.azurewebsites.net/documentos",
 });
 
 export function getDocumentos() {
-  return api.get("/documentos").then((resp):Documento[] => resp.data);
+  return api.get("/").then((resp):Documento[] => resp.data);
 }
 
 export function getDocumento(id: number, nome: string): Promise<void> {
   return api
-    .get(`/documentos/download/${id}`, { responseType: "blob" })
+    .get(`/download/${id}`, { responseType: "blob" })
     .then((response) => {
       saveAs(response.data, nome);
     });
+}
+
+export function postDocumento(id: string, arquivo: File ){
+  const formData = new FormData();
+  formData.append("id", id);
+  formData.append("arquivo", arquivo);
+  return api.post("/upload", formData, {
+    headers:{
+      'Content-Type': 'multipart/form-data'
+    }
+  }).then(resp => {return resp.data}).catch((error) => alert(error))
+
 }
