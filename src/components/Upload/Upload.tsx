@@ -25,6 +25,7 @@ export function Upload () {
         if(!user.id){
             alert('teste')
         }
+        alert(user.id)
 
         if(!arquivo){
             alert("Nenhum arquivo selecionado!")
@@ -32,7 +33,7 @@ export function Upload () {
         }
 
         setLoad(true)
-      postDocumento("2", arquivo).then(() => {
+      postDocumento(user.id.toString(), arquivo).then(() => {
 
         setArquivo(null)
         document.querySelector('input[type=file]')!.value = ''; 
