@@ -3,4 +3,5 @@ interface CardProps {
     name: string;
     progress: number;
     author: string;
+    description: string;
   }

@@ -6,5 +6,6 @@ data_insercao	: Date;
 progresso: number;
 publico: boolean;
 extensao: string;
+descricao: string;
 usuario: Usuario;
 }

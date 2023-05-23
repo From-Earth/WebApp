@@ -1,13 +1,14 @@
 import axios from "axios";
 import { FilseSaver, saveAs } from "file-saver";
 import { Documento } from "../model/Documento";
+import { DocumentoList } from "../model/DocumentoList";
 
  const api = axios.create({
   baseURL: "https://webapisenac.azurewebsites.net/documentos",
 });
 
 export function getDocumentos() {
-  return api.get("/").then((resp):Documento[] => resp.data);
+  return api.get("/").then((resp):DocumentoList => resp.data);
 }
 
 export function getDocumento(id: number, nome: string): Promise<void> {

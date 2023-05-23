@@ -22,11 +22,6 @@ export function Upload () {
     const navigate = useNavigate ();
     
     function cadastrar () {
-        if(!user.id){
-            alert('teste')
-        }
-        alert(user.id)
-
         if(!arquivo){
             alert("Nenhum arquivo selecionado!")
             return;

@@ -14,7 +14,7 @@ export default function Painel() {
   useEffect(() => {
     if (documentos.length == 0) {
       getDocumentos()
-        .then(setDocumentos)
+        .then(resp => setDocumentos(resp.content))
         .catch((err) => console.log(err))
         .finally(() => setLoad(false));
     }
@@ -32,6 +32,7 @@ export default function Painel() {
             {documentos.map((item: Documento) => {
               return (
                 <Card
+                description={item.usuario.descricao}
                   id={item.id}
                   author={item.usuario.nome}
                   name={item.nome}

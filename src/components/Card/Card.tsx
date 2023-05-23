@@ -4,7 +4,7 @@ import "./Card.css"
 import { getDocumento } from "../../services/Documentos";
 import spinner from "../../assets/images/spinner.gif"
 
-export default function Card({id,name, progress, author}: CardProps) {
+export default function Card({id,name, progress, author, description}: CardProps) {
   const [load,setLoad] = useState(false);
     function downloadDoc(){
         setLoad(true);
@@ -15,7 +15,7 @@ export default function Card({id,name, progress, author}: CardProps) {
       <img src="https://picsum.photos/245/600"  className="c-card__image" onClick={downloadDoc}/>
       <div>
         <p className="c-card__text">
-            Lorem ipsum dolor sit amet pariatur dolores facilis culpa modi minus 
+            {description ? description : "Lorem ipsum dolor sit amet pariatur dolores facilis culpa modi minus"} 
             <br/>
           {name}<br/> <span className="c-card__author">{author}</span>
         </p>
