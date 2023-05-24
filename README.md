@@ -4,7 +4,7 @@
 
 - Tecnologias utilizadas
 - Desenvolvedores
-- Programas necessarios instalar para iniciar o projeto
+- Programas necessários instalar para iniciar o projeto
 
 ## Tecnologias utilizadas
 
