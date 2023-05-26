@@ -32,7 +32,7 @@
 <table border="3">
     <tr>
         <td><img src="https://github.com/Kaway-Dev.png" width="100px"></td>
-        <td>Philippe Kaway<br><a href="https://github.com/elaoliveira">Github</a></td>
+        <td>Philippe Kaway<br><a href="https://github.com/Kaway-Dev">Github</a></td>
         <td><img src="https://github.com/Israelsilva02.png" width="100px"></td>
         <td>Israel Bernardo<br><a href="https://github.com/Gabriela17tx">Github</a></td>
     </tr>   
