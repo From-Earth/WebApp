@@ -34,11 +34,11 @@
         <td><img src="https://github.com/Kaway-Dev.png" width="100px"></td>
         <td>Philippe Kaway<br><a href="https://github.com/Kaway-Dev">Github</a></td>
         <td><img src="https://github.com/Israelsilva02.png" width="100px"></td>
-        <td>Israel Bernardo<br><a href="https://github.com/Gabriela17tx">Github</a></td>
+        <td>Israel Bernardo<br><a href="https://github.com/Israelsilva02">Github</a></td>
     </tr>   
       <tr>
         <td><img src="https://github.com/guilherme-braga-c.png" width="100px"></td>
-        <td>Guilherme Braga<br><a href="https://github.com/ranimendes">Github</a></td>
+        <td>Guilherme Braga<br><a href="https://github.com/guilherme-braga-c">Github</a></td>
        <td><img src="https://github.com/MatheusMMonteiro.png" width="100px"></td>
         <td>Matheus Monteiro<br><a href="https://github.com/MatheusMMonteiro">Github</a></td>
     </tr>
