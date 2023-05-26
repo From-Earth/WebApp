@@ -27,6 +27,6 @@ export function postDocumento(id: string, arquivo: File ){
     headers:{
       'Content-Type': 'multipart/form-data'
     }
-  }).then(resp => {return resp.data}).catch((error) => alert(error))
+  }).then(resp =>  resp.data).catch((error) => alert(error))
 
 }

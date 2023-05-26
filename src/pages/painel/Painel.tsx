@@ -37,6 +37,7 @@ export default function Painel() {
                   author={item.usuario.nome}
                   name={item.nome}
                   progress={item.progresso}
+                  image="https://picsum.photos/245/600"
                 />
               );
             })}
