@@ -24,6 +24,12 @@
     font-size: 10px;
     
 }
+.c-card__row{
+    display: flex;
+    width: 100%;
+    justify-content:  space-between;
+    
+}
 .c-card__progress{
     border: 1px solid;
     padding: 2px;

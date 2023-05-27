@@ -12,6 +12,7 @@ import { Delete } from "./components/Delete/Delete";
 import { Upload } from "./components/Upload/Upload";
 import { useUserStore } from "./services/UserStore";
 import UserPerfil from "./components/User/UserPerfil/UserPerfil";
+import DocumentEdit from "./components/Document/DocumentEdit/DocumentEdit";
 
 export default function PageRoutes(){
 
@@ -52,6 +53,7 @@ export default function PageRoutes(){
 
                 <Route element={<Painel/>} path="/painel"/>
                 <Route element={<Upload/>} path="/painel/livro"/>
+                <Route element={<DocumentEdit/>} path="/painel/livro/edit/:id"/>
                 <Route element={<UserEdit/>} path="/painel/edit/:id"/>
                 <Route element={<Delete/>} path="/painel/excluir/:id"/>
                 <Route element={<UserPerfil/>} path="/painel/usuario"/>

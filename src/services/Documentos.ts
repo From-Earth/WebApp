@@ -18,6 +18,9 @@ export function getDocumento(id: number, nome: string): Promise<void> {
       saveAs(response.data, nome);
     });
 }
+export function getDocumentoId(id: string) {
+  return api.get(`/${id}`).then((resp):Documento => resp.data);
+}
 
 export function postDocumento(id: string, arquivo: File ){
   const formData = new FormData();

@@ -1,3 +1,5 @@
+import { Usuario } from "./Usuario";
+
 export class Documento{
     id: number;
 arquivo: any;

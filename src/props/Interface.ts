@@ -5,4 +5,5 @@ interface CardProps {
     author: string;
     description: string;
     image: string;
+    idUsuario: number;
   }
