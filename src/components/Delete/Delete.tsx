@@ -4,6 +4,8 @@ import "./Delete.css";
 import spinner from "../../assets/images/spinner.gif";
 import { deleteUser } from "../../services/Usuario";
 import { useUserStore } from "../../services/UserStore";
+import { Button } from "../Styled/Buttons";
+import { Container } from "../Styled/Containers";
 
 export function Delete() {
   const [load, setLoad] = useState(false);
@@ -27,18 +29,18 @@ export function Delete() {
     }
   }
   return (
-    <section className="delete">
+    <Container>
       <h2>Excluir conta</h2>
 
       <p>Deseja excluir a sua conta?</p>
-      <button className="btn" type="submit" onClick={excluir}>
-        Excluir conta
-      </button>
-      <button className="btn" type="submit" onClick={() => navigate("/painel")}>
+      <Button className="btn" type="submit" onClick={excluir}>
+        Sim
+      </Button>
+      <Button className="btn" type="submit" onClick={() => navigate("/painel")}>
         Cancelar
-      </button>
+      </Button>
 
       {load && <img src={spinner} width="30px" />}
-    </section>
+    </Container>
   );
 }

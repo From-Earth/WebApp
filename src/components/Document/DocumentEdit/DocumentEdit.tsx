@@ -4,8 +4,9 @@ import { Container } from "../../Styled/Containers";
 import { InputText, LabelText } from "../../Styled/Inputs";
 import { Button, ButtonClean } from "../../Styled/Buttons";
 import { useNavigate, useParams } from "react-router-dom";
-import { getDocumentoId } from "../../../services/Documentos";
+import { getDocumentoId, putDocumento } from "../../../services/Documentos";
 import spinner from "../../../assets/images/spinner.gif";
+import { DocumentoAtualiza } from "../../../model/DocumentoAtualiza";
 
 export default function DocumentEdit() {
   const [data, setData] = useState<Documento | null>(null);
@@ -37,6 +38,14 @@ export default function DocumentEdit() {
         .finally(() => setLoad(false));
     }
   }
+
+  function updateDoc(){
+    if(data){
+      setLoad(true)
+      const doc = new DocumentoAtualiza(data);
+      putDocumento(doc).catch(() => alert("erro")).then(() => {alert("Livro atualizado com sucesso!"); getDocument()}).finally(() => setLoad(false))
+    }
+  }
   return (
     <Container>
       {data && (
@@ -62,14 +71,13 @@ export default function DocumentEdit() {
           <LabelText>Marque o aceite para tornar seu livro público</LabelText>
           <InputText
             type="checkbox"
-            value={data?.publico}
-            defaultChecked={isPublic}
-            onChange={(e) => handleChange("publico", e.target.value)}
+            defaultChecked={data?.publico}
+            onClick={(e) => handleChange("publico", e.target.value)}
           />
 
-          <Button>Salvar</Button>
+          <Button onClick={updateDoc} type="submit">Salvar</Button>
 
-          <Button>Excluir livro</Button>
+          <Button onClick={() => navigate(`/painel/livro/excluir/${data.id}`)}>Excluir livro</Button>
           <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
 
         </>

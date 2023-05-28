@@ -7,7 +7,7 @@ nome: string;
 data_insercao	: Date;
 progresso: number;
 publico: boolean;
-extensao: string;
 descricao: string;
+extensao: string;
 usuario: Usuario;
 }

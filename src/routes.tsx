@@ -9,10 +9,11 @@ import NotFound from "./pages/notFound/NotFound";
 import Painel from "./pages/painel/Painel";
 import UserEdit from "./components/User/UserEdit/UserEdit";
 import { Delete } from "./components/Delete/Delete";
-import { Upload } from "./components/Upload/Upload";
+import { Upload } from "./components/Document/Upload/Upload";
 import { useUserStore } from "./services/UserStore";
 import UserPerfil from "./components/User/UserPerfil/UserPerfil";
 import DocumentEdit from "./components/Document/DocumentEdit/DocumentEdit";
+import { DocumentDelete } from "./components/Document/Delete/DocumentDelete";
 
 export default function PageRoutes(){
 
@@ -54,6 +55,7 @@ export default function PageRoutes(){
                 <Route element={<Painel/>} path="/painel"/>
                 <Route element={<Upload/>} path="/painel/livro"/>
                 <Route element={<DocumentEdit/>} path="/painel/livro/edit/:id"/>
+                <Route element={<DocumentDelete/>} path="/painel/livro/excluir/:id"/>
                 <Route element={<UserEdit/>} path="/painel/edit/:id"/>
                 <Route element={<Delete/>} path="/painel/excluir/:id"/>
                 <Route element={<UserPerfil/>} path="/painel/usuario"/>

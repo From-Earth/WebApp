@@ -1,7 +1,7 @@
 import React from "react";
 import { useUserStore } from "../../../services/UserStore";
 import styled  from "styled-components";
-import { Button } from "../../Styled/Buttons";
+import { Button, ButtonClean } from "../../Styled/Buttons";
 import { useNavigate } from "react-router-dom";
 
 export default function UserPerfil(){
@@ -14,6 +14,8 @@ export default function UserPerfil(){
 
             <Button onClick={() => navigate(`/painel/edit/${user.id}`)}>Alterar meus dados</Button>
             <Button onClick={() => navigate(`/painel/excluir/${user.id}`)}>Excluir minha conta</Button>
+            
+            <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
             
         </Container>
     )

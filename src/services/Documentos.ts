@@ -2,6 +2,7 @@ import axios from "axios";
 import { FilseSaver, saveAs } from "file-saver";
 import { Documento } from "../model/Documento";
 import { DocumentoList } from "../model/DocumentoList";
+import { DocumentoAtualiza } from "../model/DocumentoAtualiza";
 
  const api = axios.create({
   baseURL: "https://webapisenac.azurewebsites.net/documentos",
@@ -32,4 +33,14 @@ export function postDocumento(id: string, arquivo: File ){
     }
   }).then(resp =>  resp.data).catch((error) => alert(error))
 
+}
+
+export function putDocumento(doc: DocumentoAtualiza){
+  alert(doc.publico)
+  return api
+  .put("/atualizar", doc)
+  .then((response):Documento => response.data).catch((error) => error);
+}
+export function deleteDocumento(id: string) {
+  return api.delete(`/${id}`).then((resp) => resp.data);
 }

@@ -32,7 +32,7 @@ export default function Painel() {
             {documentos.map((item: Documento) => {
               return (
                 <Card
-                description={item.usuario.descricao}
+                description={item.descricao}
                   id={item.id}
                   author={item.usuario.nome}
                   name={item.nome}

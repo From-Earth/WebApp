@@ -5,6 +5,9 @@ import { postLogin } from '../../services/Usuario';
 import { UsuarioLogin } from '../../model/UsuarioLogin';
 import spinner from "../../assets/images/spinner.gif"
 import { useUserStore } from '../../services/UserStore';
+import { Container } from '../Styled/Containers';
+import { InputText, LabelText } from '../Styled/Inputs';
+import { Button, ButtonClean } from '../Styled/Buttons';
 
 export function Login (){
     const [load, setLoad] = useState(false);
@@ -23,20 +26,21 @@ export function Login (){
 
     return (
         <>
-        <section className="login">
+        <Container>
             <h2>Login</h2>
-            <label>Email</label>
-            <input type='email' name="email" placeholder='Digite o seu e-mail' autoComplete='off' required value={email} onChange={e => setEmail(e.target.value)}></input>
-            <label>Senha</label>
-            <input type='password' name='password' placeholder='Digite a sua senha' autoComplete='off' required value={password} onChange={e => setPassword(e.target.value)}></input>
+            <LabelText>Email</LabelText>
+            <InputText type='email' name="email" placeholder='Digite o seu e-mail' autoComplete='off' required value={email} onChange={e => setEmail(e.target.value)}></InputText>
+            <LabelText>Senha</LabelText>
+            <InputText type='password' name='password' placeholder='Digite a sua senha' autoComplete='off' required value={password} onChange={e => setPassword(e.target.value)}></InputText>
 
-            <button className='btn' type='submit' onClick={login}>Enviar</button>
+            <Button className='btn' type='submit' onClick={login}>Enviar</Button>
             {load && (
                 <img src={spinner}  width="30px"/>
             )}
-
-            <h5>Ainda não possui cadastro conosco? <span onClick={()=> navigate("/Cadastro") }>Clique aqui</span> para se cadastrar!</h5>
-        </section>
+            
+            <ButtonClean onClick={() => navigate("/home")}>Voltar</ButtonClean>
+            <h5>Ainda não possui cadastro conosco? <span onClick={()=> navigate("/Cadastro") } style={{color: "floralwhite", textDecoration : "underline"}}>Clique aqui</span> para se cadastrar!</h5>
+        </Container>
 
         </>
     )

@@ -26,4 +26,11 @@ export  const ButtonClean = styled.button`
     &&:hover{
     color: #101026;
     }
+
+    && > img, svg{
+        width: 20px;        
+        height: 20px;
+        fill: #fff;
+
+    }
 `

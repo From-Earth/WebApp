@@ -7,6 +7,8 @@ import { UsuarioCadastro } from '../../model/UsuarioCadastro';
 import { postCadastro } from '../../services/Usuario';
 import { redirect, useNavigate } from 'react-router-dom';
 import { ButtonClean } from '../Styled/Buttons';
+import { Container } from '../Styled/Containers';
+import { InputText, LabelText } from '../Styled/Inputs';
 
 
 export function Cadastro () { 
@@ -33,32 +35,32 @@ export function Cadastro () {
         
     }
     return (
-        <section className='principal'>
+        <Container >
             <h2>Login</h2>
-            <label>Nome</label>
-            <input type='text' name='nome' placeholder='Digite o seu nome' autoComplete='off' required
+            <LabelText>Nome</LabelText>
+            <InputText type='text' name='nome' placeholder='Digite o seu nome' autoComplete='off' required
             value={nome}
-            onChange={(e) => setNome(e.target.value)}></input>
+            onChange={(e) => setNome(e.target.value)}></InputText>
 
-            <label>Email</label>
-            <input type="email" name='email' placeholder='Digite o seu email'
+            <LabelText>Email</LabelText>
+            <InputText type="email" name='email' placeholder='Digite o seu email'
             autoComplete='off' required
                 value={email}
-            onChange={(e) => setEmail(e.target.value)}></input>
+            onChange={(e) => setEmail(e.target.value)}></InputText>
             
-             <label>Senha</label>
-            <input type="password" name='senha' placeholder='Digite sua senha'
+             <LabelText>Senha</LabelText>
+            <InputText type="password" name='senha' placeholder='Digite sua senha'
             autoComplete='off' required
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
-            ></input>
+            ></InputText>
 
-            <label>Confirmar Senha</label>
-            <input type="password" name='senha' placeholder='Digite sua senha'
+            <LabelText>Confirmar Senha</LabelText>
+            <InputText type="password" name='senha' placeholder='Digite sua senha'
             autoComplete='off' required
                 value={confirmarSenha}
             onChange={(e) => setConfirmarSenha(e.target.value)}
-            ></input>
+            ></InputText>
 
             
 
@@ -70,7 +72,7 @@ export function Cadastro () {
             
             <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
 
-        </section>
+        </Container>
     )
 }
 

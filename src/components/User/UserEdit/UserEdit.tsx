@@ -3,8 +3,11 @@ import "./UserEdit.css";
 
 import spinner from "../../../assets/images/spinner.gif";
 import { getUser, putUser } from "../../../services/Usuario";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Usuario } from "../../../model/Usuario";
+import { Button, ButtonClean } from "../../Styled/Buttons";
+import { Container } from "../../Styled/Containers";
+import { InputText, LabelText } from "../../Styled/Inputs";
 
 export default function UserEdit() {
   const [nome, setNome] = useState("");
@@ -17,6 +20,7 @@ export default function UserEdit() {
   const [complemento, setComplemento] = useState("");
   const [load, setLoad] = useState(false);
   const [data, setData] = useState<Usuario | null>(null);
+  const navigate = useNavigate();
   let { id } = useParams();
 
   useEffect(() => {
@@ -53,13 +57,13 @@ export default function UserEdit() {
     }
   }
   return (
-    <section className="edit">
+    <Container className="edit">
       {data && (
         <>
           <h2>Alterar Dados</h2>
 
-          <label>Nome</label>
-          <input
+          <LabelText>Nome</LabelText>
+          <InputText
             type="text"
             name="nome"
             placeholder="Digite o seu nome"
@@ -68,9 +72,9 @@ export default function UserEdit() {
             value={data.nome}
             defaultValue={nome}
             onChange={(e) => handleChange("nome", e.target.value)}
-          ></input>
-          <label>Email</label>
-          <input
+          ></InputText>
+          <LabelText>Email</LabelText>
+          <InputText
             type="email"
             name="email"
             placeholder="Digite o seu e-mail"
@@ -79,9 +83,9 @@ export default function UserEdit() {
             value={data.email}
             defaultValue={email}
             onChange={(e) => handleChange("email", e.target.value)}
-          ></input>
-          <label>Telefone</label>
-          <input
+          ></InputText>
+          <LabelText>Telefone</LabelText>
+          <InputText
             type="text"
             name="telefone"
             placeholder="Digite o seu telefone"
@@ -90,9 +94,9 @@ export default function UserEdit() {
             value={data.telefone}
             defaultValue={telefone}
             onChange={(e) => handleChange("telefone", e.target.value)}
-          ></input>
-          <label>Senha</label>
-          <input
+          ></InputText>
+          <LabelText>Senha</LabelText>
+          <InputText
             type="password"
             name="senha"
             placeholder="Digite o seu senha"
@@ -101,14 +105,16 @@ export default function UserEdit() {
             value={data.senha}
             defaultValue={senha}
             onChange={(e) => handleChange("senha", e.target.value)}
-          ></input>
+          ></InputText>
 
-          <button className="btn" type="submit" onClick={editar}>
+          <Button className="btn" type="submit" onClick={editar}>
             Editar
-          </button>
+          </Button>
+          
+          <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
         </>
       )}
       {load && <img src={spinner} width="30px" />}
-    </section>
+    </Container>
   );
 }
