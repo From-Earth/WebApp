@@ -10,7 +10,7 @@ import { postDocumento } from '../../services/Documentos';
 import { useUserStore } from '../../services/UserStore';
 import DocumentEdit from '../Document/DocumentEdit/DocumentEdit';
 import { Documento } from '../../model/Documento';
-import { Button } from '../Styled/Buttons';
+import { Button, ButtonClean } from '../Styled/Buttons';
 import UserEdit from '../User/UserEdit/UserEdit';
 
 
@@ -19,6 +19,7 @@ export function Upload () {
     const [arquivo, setArquivo] = useState<File | null>(null);    
     const [doc, setDoc] = useState<Documento | null>(null);    
     const user = useUserStore(state => state);
+    const navigate = useNavigate();
     
     const addArquivo = (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -51,6 +52,7 @@ export function Upload () {
             {load && (
                 <img src={spinner}  width="30px"/>
             )}
+            <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
            
         </section>
     )

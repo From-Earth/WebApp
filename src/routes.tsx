@@ -16,7 +16,7 @@ import DocumentEdit from "./components/Document/DocumentEdit/DocumentEdit";
 
 export default function PageRoutes(){
 
-  const ProtectedRoute = ({ children }) => {
+  const ProtectedRoute = ({ children }: any) => {
     const user = useUserStore(state => state);
     if (user.isEmpty) {
       alert("Acesso expirado!")

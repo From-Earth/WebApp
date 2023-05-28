@@ -1,6 +1,6 @@
 import React from "react";
 import { useUserStore } from "../../../services/UserStore";
-import { styled } from "styled-components";
+import styled  from "styled-components";
 import { Button } from "../../Styled/Buttons";
 import { useNavigate } from "react-router-dom";
 

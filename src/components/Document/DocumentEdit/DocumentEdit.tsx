@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Documento } from "../../../model/Documento";
 import { Container } from "../../Styled/Containers";
 import { InputText, LabelText } from "../../Styled/Inputs";
-import { Button } from "../../Styled/Buttons";
+import { Button, ButtonClean } from "../../Styled/Buttons";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDocumentoId } from "../../../services/Documentos";
 import spinner from "../../../assets/images/spinner.gif";
@@ -67,10 +67,10 @@ export default function DocumentEdit() {
             onChange={(e) => handleChange("publico", e.target.value)}
           />
 
-          <Button>Alterar dados</Button>
+          <Button>Salvar</Button>
 
           <Button>Excluir livro</Button>
-          <Button onClick={() => navigate(-1)}>Cancelar</Button>
+          <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
 
         </>
       )}

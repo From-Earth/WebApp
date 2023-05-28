@@ -4,7 +4,7 @@ import "./Card.css";
 import { getDocumento } from "../../services/Documentos";
 import spinner from "../../assets/images/spinner.gif";
 import { useUserStore } from "../../services/UserStore";
-import { Button } from "../Styled/Buttons";
+import { Button, ButtonClean } from "../Styled/Buttons";
 import { useNavigate } from "react-router-dom";
 
 export default function Card({
@@ -38,7 +38,7 @@ export default function Card({
         <div className="c-card__row">
           <div className="c-card__progress">{progress}%</div>
           {idUsuario == user.id && (          
-              <div onClick={() =>navigate(`/painel/livro/edit/${id}`)}>edit</div>            
+          <ButtonClean onClick={() =>navigate(`/painel/livro/edit/${id}`)}>editar</ButtonClean>        
           )}
         </div>
       </div>

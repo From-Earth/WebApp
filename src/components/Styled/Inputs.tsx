@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "styled-components";
+import  styled  from "styled-components";
 
 export const LabelText = styled.label`
     color: #f5f5f5;

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { UsuarioCadastro } from '../../model/UsuarioCadastro';
 import { postCadastro } from '../../services/Usuario';
 import { redirect, useNavigate } from 'react-router-dom';
+import { ButtonClean } from '../Styled/Buttons';
 
 
 export function Cadastro () { 
@@ -65,6 +66,9 @@ export function Cadastro () {
             {load && (
                 <img src={spinner}  width="30px"/>
             )}
+
+            
+            <ButtonClean onClick={() => navigate(-1)}>Voltar</ButtonClean>
 
         </section>
     )
