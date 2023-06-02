@@ -4,7 +4,8 @@
 
 - Tecnologias utilizadas
 - Desenvolvedores
-- Programas necessários instalar para iniciar o projeto
+- Programas necessários
+- Como instalar o Projeto
 
 ## Tecnologias utilizadas
 
@@ -28,6 +29,30 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" width="80px" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="80px"/>
  
+ 
+## < Como instalar o Projeto >
+ 
+ Para inicar o projeto e necessário utilizar o Node version v16 ou uma versão superior.
+ 
+ Scripts Disponíveis
+No diretório do projeto, você pode executar:
+```npm i``` ,
+ em seguida e preciso inserir o
+```npm start```
+Executa o aplicativo no modo de desenvolvimento.
+Abra http://localhost:3000 para visualizá-lo em seu navegador.
+
+A página será recarregada quando você fizer alterações.
+Você também pode ver erros de lint no console.
+
+npm test
+Inicia o executor de teste no modo de observação interativo.
+Consulte a seção sobre como executar testes para obter mais informações.
+
+```npm run build```
+Cria o aplicativo para produção na buildpasta.
+Ele empacota corretamente o React no modo de produção e otimiza a compilação para obter o melhor desempenho.
+
 ## < Desenvolvedores >
 <table border="3">
     <tr>
