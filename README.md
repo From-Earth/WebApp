@@ -45,7 +45,7 @@ Abra http://localhost:3000 para visualizá-lo em seu navegador.
 A página será recarregada quando você fizer alterações.
 Você também pode ver erros de lint no console.
 
-npm test
+```npm test```
 Inicia o executor de teste no modo de observação interativo.
 Consulte a seção sobre como executar testes para obter mais informações.
 
