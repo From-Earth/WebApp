@@ -3,9 +3,9 @@
 # Indice
 
 - Tecnologias utilizadas
-- Desenvolvedores
 - Programas necessários
 - Como instalar o Projeto
+- Desenvolvedores
 
 ## Tecnologias utilizadas
 
@@ -32,13 +32,14 @@
  
 ## < Como instalar o Projeto >
  
- Para inicar o projeto e necessário utilizar o Node version v16 ou uma versão superior.
- 
+ Para inicar o projeto e necessário ter instalado na sua máquina o **Node** version `v16` ou uma versão superior.
  Scripts Disponíveis
 No diretório do projeto, você pode executar:
-```npm i``` ,
- em seguida e preciso inserir o
+```npm i``` 
+ 
+ Em seguida e preciso inserir o
 ```npm start```
+ 
 Executa o aplicativo no modo de desenvolvimento.
 Abra http://localhost:3000 para visualizá-lo em seu navegador.
 
