@@ -7,6 +7,10 @@
 - Como instalar o Projeto
 - Desenvolvedores
 
+# Links
+- [Figma](https://www.figma.com/file/R6galrrziUVXpzEHJ4lYS8/READER-(Copy)?type=design&node-id=0-1&t=7iA50pD11IWOroGx-0)
+- [App](https://photos.google.com/share/AF1QipPiUL4aVhBcvGLVcCCn3ltmUl6pjtWVYF0IfZwVd3EMxqNKaLl8wspHF_NaodGbow?pli=1&key=WmZyT0diWXFfT2lYN0J6b1E4QmxUaHNfSzZSamJR)
+
 ## Tecnologias utilizadas
 
 ### Front-End
